@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Beranda - Media Sistem Komputer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Animasi swipe dari kiri ke tengah */
+        @keyframes swipeInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Animasi swipe dari kanan ke tengah */
+        @keyframes swipeInRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Styling untuk h1 dengan gradasi dan animasi */
+        .container h1 {
+            background: linear-gradient(45deg, #00aaff, #ff00ff, #00ffbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: swipeInLeft 1.5s ease-out;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Styling untuk p dengan gradasi dan animasi */
+        .container p.card {
+            background: linear-gradient(45deg, #ff00ff, #00aaff, #00ffbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: swipeInRight 1.5s ease-out 0.5s both; /* Delay 0.5s agar muncul setelah h1 */
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<!-- Background Layers -->
+<canvas id="matrixRain"></canvas>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Media Sistem Komputer</div>
+    <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tujuan.html">Tujuan</a></li>
+        <li><a href="materi.html">Materi</a></li>
+        <li><a href="kuis.html">Kuis</a></li>
+        <li><a href="game.html">Game</a></li>
+        <li><a href="profil.html">Profil Guru</a></li> 
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Selamat Datang di Pembelajaran Sistem Komputer</h1>
+    <p class="card">Ayo belajar mengenal pengertian sistem komputer, komponen-komponenya serta hal-hal terkait Sistem Komputer, dan buat pelajaran jadi lebih seru dengan kuis dan game interkatif.</p>
+</div>
+
+<script src="matrix.js"></script>
+</body>
+</html>

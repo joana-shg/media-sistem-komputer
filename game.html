@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Sistem Komputer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Background Layers -->
+<canvas id="matrixRain"></canvas>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+
+<nav>
+    <div class="logo">Media Sistem Komputer</div>
+    <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tujuan.html">Tujuan</a></li>
+        <li><a href="materi.html">Materi</a></li>
+        <li><a href="kuis.html">Kuis</a></li>
+        <li><a href="game.html">Game</a></li>
+        <li><a href="profil.html">Profil Guru</a></li> 
+    </ul>
+</nav>
+
+<div class="game-box">
+    <div id="question-box">
+        <p class="instruction" id="question-text">Pertanyaan muncul di sini</p>
+
+        <div class="items" id="options-area">
+            <!-- Opsi jawaban akan di-generate dari JS -->
+        </div>
+
+        <div class="drop-zone" id="drop">Drop jawaban di sini</div>
+
+        <button class="next-btn" onclick="nextQuestion()">Pertanyaan Berikutnya</button>
+
+        <p id="score-text">Skor: 0</p>
+    </div>
+</div>
+
+<div class="match-container">
+    <h2>Game Mencocokkan Kata</h2>
+    <p>Tarik kata di kiri ke pasangan yang benar di sebelah kanan.</p>
+
+    <div class="match-game">
+        <div class="match-left" id="leftWords"></div>
+        <div class="match-right" id="rightWords"></div>
+    </div>
+
+    <div id="match-score"></div>
+    <button class="restart-btn" onclick="restartMatch()">Ulangi Game</button>
+</div>
+
+<script src="game.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="matrix.js"></script>

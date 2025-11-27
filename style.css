@@ -1,0 +1,744 @@
+/* ===== GENERAL STYLE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background: #0e0e0e;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    width: 100%;
+    background: #141414;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00aaff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+/* ===== SECTION WRAPPER ===== */
+.container {
+    width: 80%;
+    margin: auto;
+    box-shadow: #00b3b3;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 15vh;
+}
+
+/* ===== CARD STYLE ===== */
+.tujuan-card {
+    background: #1b1b1b;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    cursor: pointer;
+    transition: 0.3s; /* Menambahkan transition untuk efek smooth */
+}
+
+.tujuan-card:hover {
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(26, 60, 255, 0.5); /* Efek shadow box biru saat hover */
+}
+
+button {
+    background: #00aaff;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #0088cc;
+}
+
+/* QUIZ UI MODERN */
+
+#quiz-box {
+    background: #121212;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+#question {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.answer-option {
+    background: #1e1e1e;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #333;
+}
+
+.answer-option:hover {
+    background: #292929;
+    transform: scale(1.02);
+}
+
+.correct {
+    background: #003b2f !important;
+    border-color: #00ffbf;
+}
+
+.wrong {
+    background: #3b0000 !important;
+    border-color: #ff4d4d;
+}
+
+#timer {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: right;
+    color: #00ffbf;
+}
+
+#progress-container {
+    width: 100%;
+    height: 10px;
+    background: #333;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+#progress {
+    height: 10px;
+    width: 0%;
+    background: #00ffff;
+    transition: width 0.5s ease;
+    border-radius: 6px;
+}
+
+.restart-btn {
+    padding: 12px 25px;
+    background: #00ffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.restart-btn:hover {
+    background: #00b3b3;
+}
+
+/* Container */
+.game-container {
+    max-width: 200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Kotak utama */
+.game-box {
+    background: #111;
+    position: relative;
+    width: 100vh;
+    padding: 20px;
+    margin: auto;
+    margin-top: 15vh;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.2);
+}
+
+/* Instruksi */
+.instruction {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Item yang bisa di-drag */
+.drag-item {
+    background: #222;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: grab;
+    transition: 0.2s;
+    border: 1px solid #333;
+}
+
+.drag-item:hover {
+    background: #333;
+}
+
+/* Drop Zone */
+.drop-zone {
+    background: #000;
+    border: 2px dashed #444;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* Saat item berada di atas */
+.drop-zone.hover {
+    border-color: #00aaff;
+    background: #0c1b27;
+}
+
+/* Sukses drop */
+.drop-zone.success {
+    border-color: #00ff99;
+    background: #062d1c;
+}
+
+.next-btn {
+    background: #007bff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    background: #005fcc;
+}
+
+#score-text {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.correct-drop {
+    background: #063;
+    border-color: #0f6;
+    color: #9f9;
+}
+
+.wrong-drop {
+    background: #600;
+    border-color: #f66;
+    color: #f99;
+}
+
+/* materi-container */
+.materi-container {
+    margin: 50px;
+    font-size: 0 0 10px;
+    text-align: center;
+}
+
+.materi-item1 {
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    width: 80vh;
+    height: 50hv;
+    padding: 10px;
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 15px;
+}
+
+.materi-item2 {
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    width: 60vh;
+    height: 30vh;
+    padding: 10px;
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 15px;
+}
+
+.materi-item1:hover {
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.2);
+}
+
+.materi-item2:hover {
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.2);
+}
+
+/* ================================================
+   ANIMASI LATAR BELAKANG LUAR ANGKASA / STARFIELD
+   ================================================ */
+
+body {
+    background: #060b1b;
+    overflow-x: hidden;
+}
+
+.stars, .stars2, .stars3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+    background-repeat: repeat;
+    background-size: contain;
+    animation: spaceMove 40s linear infinite;
+    opacity: 0.45;
+}
+
+.stars {
+    background-image: url("https://i.ibb.co/rF1VHG8/stars1.png");
+    animation-duration: 90s;
+}
+
+.stars2 {
+    background-image: url("https://i.ibb.co/1bvBrjF/stars2.png");
+    animation-duration: 130s;
+    opacity: 0.3;
+}
+
+.stars3 {
+    background-image: url("https://i.ibb.co/PMc9ptf/stars3.png");
+    animation-duration: 200s;
+    opacity: 0.25;
+}
+
+/* Animasi gerakan bintang */
+@keyframes spaceMove {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+/* ============================
+       SHOOTING STAR / METEOR
+   ============================ */
+.meteor {
+    position: fixed;
+    top: 0;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    opacity: 0.8;
+    animation: shoot 3s linear infinite;
+    filter: blur(1px);
+    z-index: -1;
+}
+
+/* Posisi meteor berbeda-beda */
+.meteor:nth-child(1) { left: 10%; animation-delay: 1s; }
+.meteor:nth-child(2) { left: 30%; animation-delay: 3s; }
+.meteor:nth-child(3) { left: 60%; animation-delay: 5s; }
+.meteor:nth-child(4) { left: 80%; animation-delay: 7s; }
+
+@keyframes shoot {
+    0% {
+        transform: translateY(-200px) translateX(-100px) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(1000px) translateX(300px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* ============================
+         MATRIX CYBER RAIN
+   ============================ */
+#matrixRain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* Styling tambahan untuk profil */
+        .profil-container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            margin-top: 25px;
+        }
+        .profil-card {
+            background: #ff3ab47c;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #ff76e8;
+            box-shadow: 0 0 10px rgba(255, 147, 228, 0.4);
+            max-width: 100vh;
+            margin: auto;
+            transition: 0.3s;
+        }
+        .profil-card:hover {
+            box-shadow: 0 0 15px rgba(26, 60, 255, 0.5);
+        }
+        .profil-foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00aaff;
+            margin-bottom: 20px;
+        }
+        .profil-detail {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .profil-detail h3 {
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+        .profil-detail ul {
+            list-style: none;
+            padding: 0;
+        }
+        .profil-detail li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .profil-detail li i {
+            margin-right: 10px;
+            color: #00aaff;
+        }
+
+/* ============================
+   BACKGROUND RUANG ANGKASA
+   ============================ */
+
+body {
+    background: radial-gradient(circle at top, #0a0f24, #02040a, #000000);
+    overflow-x: hidden;
+}
+
+/* Bulan sabit */
+.moon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #d9d9d9, #7a7a7a);
+    border-radius: 50%;
+    box-shadow: inset -25px 0 0 rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.5);
+    animation: glowMoon 4s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+/* Planet */
+.planet {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #4a90e2, #1e3a8a);
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(74,144,226,0.5);
+    animation: floatPlanet 6s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+/* Bintang kecil */
+.star {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    z-index: -1;
+    animation: twinkleStars 2s infinite alternate;
+}
+
+/* Meteor */
+.meteor {
+    position: fixed;
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to bottom, white, transparent);
+    rotate: 45deg;
+    opacity: 0.8;
+    z-index: -1;
+    animation: meteorFall 1.5s linear infinite;
+}
+
+/* ANIMASI */
+@keyframes glowMoon {
+    0% { box-shadow: inset -25px 0 rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3); }
+    100% { box-shadow: inset -25px 0 rgba(0,0,0,0.5), 0 0 40px rgba(255,255,255,0.6); }
+}
+
+@keyframes floatPlanet {
+    from { transform: translateY(0); }
+    to { transform: translateY(-12px); }
+}
+
+@keyframes twinkleStars {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+@keyframes meteorFall {
+    0% { transform: translateY(-100px) translateX(100px); opacity: 1; }
+    100% { transform: translateY(600px) translateX(-600px); opacity: 0; }
+}
+
+/* Matrix Canvas */
+#matrixRain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+/* METEOR SHOOTING */
+.meteor {
+    position: fixed;
+    width: 2px;
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(255,255,255,1), transparent);
+    opacity: 0.8;
+    transform: rotate(45deg);
+    z-index: -1;
+    animation: meteorFall 1.2s linear forwards;
+}
+
+@keyframes meteorFall {
+    0% {
+        transform: translate(0, 0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(400px, 600px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   ANIMASI LUCU LUAR ANGKASA (ASTRONAUT, UFO, ALIEN)
+   ============================================ */
+
+/* --- Astronot Mengambang --- */
+.astronaut {
+    position: fixed;
+    width: 90px;
+    height: auto;
+    bottom: 20%;
+    left: 10%;
+    animation: floatAstronaut 6s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+@keyframes floatAstronaut {
+    0% { transform: translateY(0) rotate(2deg); }
+    50% { transform: translateY(-20px) rotate(-2deg); }
+    100% { transform: translateY(0) rotate(2deg); }
+}
+
+/* --- UFO Melayang --- */
+.ufo {
+    position: fixed;
+    width: 110px;
+    right: 10%;
+    top: 20%;
+    animation: ufoFloat 5s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.85;
+}
+
+@keyframes ufoFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(15px) rotate(3deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* --- Alien Lucu Melompat --- */
+.alien {
+    position: fixed;
+    bottom: 10%;
+    right: 30%;
+    width: 70px;
+    animation: alienJump 1.8s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+@keyframes alienJump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+/* --- Planet lucu yang melayang --- */
+.cute-planet {
+    position: fixed;
+    bottom: 30%;
+    left: 40%;
+    width: 80px;
+    animation: cutePlanetFloat 7s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+@keyframes cutePlanetFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* ============================================
+   UPDATE METEOR BESAR & WARNA ABU-ABU
+   ============================================ */
+
+.meteor {
+    position: fixed;
+    width: 4px !important;        /* lebih besar */
+    height: 120px !important;     /* lebih panjang */
+    background: linear-gradient(to bottom, #fff674, transparent); /* abu-abu */
+    opacity: 0.9;
+    transform: rotate(45deg);
+    filter: drop-shadow(0 0 8px #cfb15c);
+    z-index: -1;
+    animation: meteorFall 1.3s linear forwards;
+}
+
+@keyframes meteorFall {
+    0% {
+        transform: translate(0,0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(450px,650px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.meteor {
+    position: fixed;
+    width: 3px;
+    height: 130px;
+    background: linear-gradient(to bottom, #ccc, transparent);
+    transform: rotate(45deg);
+    animation: meteorFall 1.4s linear forwards;
+    pointer-events: none;
+    z-index: -1;
+}
+.moon {
+    top: 40px;
+    left: 40px;
+    width: 90px;
+    height: 90px;
+    opacity: 0.6;
+}
+
+/* ============================
+   MATCHING GAME (Mencocokkan Kata)
+   ============================ */
+
+.match-container {
+    background: #111;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    text-align: center;
+}
+
+.match-game {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.match-left, .match-right {
+    width: 40%;
+}
+
+.match-item {
+    background: #1e1e1e;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: grab;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.match-item:hover {
+    background: #292929;
+}
+
+.drop-target {
+    background: #000;
+    padding: 12px;
+    border: 2px dashed #444;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.drop-target.hover {
+    border-color: #00aaff;
+    background: #0c1b27;
+}
+
+.drop-target.correct {
+    background: #063;
+    border-color: #0f6;
+    color: #9f9;
+}
+
+.drop-target.wrong {
+    background: #600;
+    border-color: #f66;
+    color: #f99;
+}

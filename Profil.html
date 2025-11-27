@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil Guru - Media Sistem Komputer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Menambahkan Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+ <style>
+        .profil-container h1 {
+            background: linear-gradient(45deg, #00aaff, #ff00ff, #00ffbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: swipeInLeft 1.5s ease-out;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+<!-- Background Layers -->
+<canvas id="matrixRain"></canvas>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Media Sistem Komputer</div>
+    <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tujuan.html">Tujuan</a></li>
+        <li><a href="materi.html">Materi</a></li>
+        <li><a href="kuis.html">Kuis</a></li>
+        <li><a href="game.html">Game</a></li>
+        <li><a href="profil.html">Profil Guru</a></li> 
+    </ul>
+</nav>
+
+<div class="profil-container">
+    <h1>Profil Guru</h1>
+    <div class="profil-card">
+        <img src="Guru.JPG" alt="Foto Guru" class="profil-foto"> 
+        <h2>Maria Juana Avira Sahang S.Pd</h2>
+        <p>Guru Informatika dan Teknologi Komputer</p>
+        <div class="profil-detail">
+            <h3><i class="fas fa-user"></i> Biodata</h3>
+            <ul>
+                <li><i class="fas fa-graduation-cap"></i> Pendidikan: S1 Pendidikan Informatika (Universitas Citra Bangsa Kupang)</li>
+                <li><i class="fas fa-briefcase"></i> Pengalaman: 5 tahun mengajar mata pelajaran Informatika di SMA</li>
+                <li><i class="fas fa-code"></i> Keahlian: Pemrograman, Sistem Operasi, Jaringan Komputer</li>
+                <li><i class="fas fa-envelope"></i> Email: juanaavirasahang@gmail.com</li>
+                <li><i class="fas fa-phone"></i> Telepon: +62 8812 3805 8919</li>
+            </ul>
+            <h3><i class="fas fa-quote-left"></i> Motivasi</h3>
+            <p>"Saya percaya bahwa teknologi adalah kunci masa depan. Melalui pembelajaran yang interaktif, siswa dapat memahami sistem komputer dengan mudah dan menyenangkan."</p>
+        </div>
+    </div>
+</div>
+
+<script src="matrix.js"></script>
+</body>
+</html>

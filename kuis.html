@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kuis Sistem Komputer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <style>
+        .container h1 {
+            background: linear-gradient(45deg, #00aaff, #ff00ff, #00ffbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: swipeInLeft 1.5s ease-out;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+<!-- Background Layers -->
+<canvas id="matrixRain"></canvas>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+
+<nav>
+    <div class="logo">Media Sistem Komputer</div>
+    <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tujuan.html">Tujuan</a></li>
+        <li><a href="materi.html">Materi</a></li>
+        <li><a href="kuis.html">Kuis</a></li>
+        <li><a href="game.html">Game</a></li>
+        <li><a href="profil.html">Profil Guru</a></li> 
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Kuis Sistem Komputer</h1>
+
+    <div id="quiz-box">
+        <div id="progress-container"><div id="progress"></div></div>
+        <div id="timer"></div>
+        <h2 id="question"></h2>
+        <div id="answers"></div>
+    </div>
+
+</div>
+
+<script src="kuis.js"></script>
+<script src="matrix.js"></script>
+
+</body>
+</html>

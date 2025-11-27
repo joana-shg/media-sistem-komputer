@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Materi Sistem Komputer</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Tambahan styling untuk layout 2 kolom */
+        .materi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .materi-item1 {
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            transition: transform 0.6s ease; /* Untuk efek flip up dan scale */
+        }
+
+        .materi-item2 {
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            transition: transform 0.6s ease; /* Untuk efek flip up dan scale */
+        }
+
+        /* Efek scale up saat hover */
+        .materi-item1:hover {
+            transform: scale(1.05); /* Membesar 5% */
+        }
+
+        .materi-item2:hover {
+            transform: scale(1.05); /* Membesar 5% */
+        }
+
+        iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* Styling untuk tombol */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            .materi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            iframe {
+                height: 250px;
+            }
+        }
+
+        /* Animasi bounce untuk teks h */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Animasi flip up untuk box item */
+        @keyframes flipUp {
+            0% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+            .materi-container h1 {
+            background: linear-gradient(45deg, #00aaff, #ff00ff, #00ffbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: swipeInLeft 1.5s ease-out;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Terapkan animasi bounce pada h1 */
+        .materi-container h1 {
+            animation: bounce 2s ease-in-out;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Terapkan animasi flip up pada box item dengan delay */
+        .materi-item1 {
+            animation: flipUp 1s ease-out 0.5s both;
+        }
+
+        .materi-item2 {
+            animation: flipUp 1s ease-out 1s both; /* Delay lebih lama agar muncul setelah item1 */
+        }
+    </style>
+</head>
+
+<body>
+<!-- Background Layers -->
+<canvas id="matrixRain"></canvas>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+
+<nav>
+    <div class="logo">Media Sistem Komputer</div>
+    <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tujuan.html">Tujuan</a></li>
+        <li><a href="materi.html">Materi</a></li>
+        <li><a href="kuis.html">Kuis</a></li>
+        <li><a href="game.html">Game</a></li>
+        <li><a href="profil.html">Profil Guru</a></li> 
+    </ul>
+</nav>
+
+<div class="materi-container">
+    <h1>Materi Sistem Komputer</h1>
+
+    <!-- Kotak materi tambahan -->
+    <div class="materi-grid">
+
+        <!-- Materi Canva -->
+        <div class="materi-item1">
+            <h2>Materi Slide PPT (Canva)</h2>
+            <p>Silakan pelajari materi pada slide berikut:</p>
+
+            <!-- EMBED CANVA -->
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+             padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+             border-radius: 8px; will-change: transform;">
+              <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                src="https://www.canva.com/design/DAG5hTqcs0Y/5wYLnlbd3T8RN-HpUkwnZA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+              </iframe>
+            </div>
+            <a href="https://www.canva.com/design/DAG5hTqcs0Y/5wYLnlbd3T8RN-HpUkwnZA/view?utm_content=DAG5hTqcs0Y&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Cream and Pink Illustrative Computer Presentation</a> oleh juanaavira sahang
+        </div>
+
+
+        <!-- Materi Buku PDF -->
+        <div class="materi-item2">
+            <h2>Materi Buku Informatika</h2>
+            <p>Akses buku materi lengkap untuk pembelajaran sistem komputer:</p>
+            <a href="https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Informatika-BS-KLS-X.pdf" target="_blank" rel="noopener noreferrer" class="btn">Lihat Materi</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script src="matrix.js"></script>
